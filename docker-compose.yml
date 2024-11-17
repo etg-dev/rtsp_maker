@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  mediamtx:
+    image: bluenviron/mediamtx:latest  # Match your docker run image
+    container_name: mediamtx
+    ports:
+      - "8554:8554"  # RTSP port
+    volumes:
+      - ./mediamtx.yml:/mediamtx.yml  # MediaMTX config file
+      - /path/to/your/video:/videos   # Mount video directory (adjust path)
+    restart: always
+
